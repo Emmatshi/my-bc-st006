@@ -29,3 +29,15 @@ poetry env use $(pyenv which python)
 poetry install
 poetry run python -m streamlit run main.py
 ````
+
+## 🧱 Architecture
+
+This template follows a clean, layered architecture that separates UI, business logic, and infrastructure.
+
+```mermaid
+flowchart TD
+    A[main.py<br/>Streamlit UI] --> B[generator.py<br/>Business Logic]
+    B --> C[prompts.py<br/>Prompt Templates]
+    B --> D[llm.py<br/>LLM Client]
+    D --> E[OpenAI API]
+```
