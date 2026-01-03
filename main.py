@@ -12,5 +12,5 @@ if "OPENAI_API_KEY" not in st.secrets:
     st.stop()
 
 
-st.title("my-bc-st002")
-st.success("Streamlit + pyenv + Poetry is working 🎉")
+st.title("🚀 Streamlit AI Template")
+st.caption("Reusable starter for Streamlit + OpenAI apps")
