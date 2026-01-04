@@ -1,5 +1,7 @@
 # Streamlit AI Template
 
+[![CI](https://github.com/Emmatshi/streamlit-ai-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Emmatshi/streamlit-ai-template/actions/workflows/ci.yml)
+
 A reusable template for building Streamlit apps powered by OpenAI.
 
 ## Features
