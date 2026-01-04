@@ -1,6 +1,8 @@
 # Streamlit AI Template
 
 [![CI](https://github.com/Emmatshi/streamlit-ai-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Emmatshi/streamlit-ai-template/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.52-red)
 
 A reusable template for building Streamlit apps powered by OpenAI.
 
@@ -43,3 +45,17 @@ flowchart TD
     B --> D[llm.py<br/>LLM Client]
     D --> E[OpenAI API]
 ```
+
+## 🚀 Use This Template
+
+This repository is a **GitHub template**.
+
+To create a new app from it:
+
+1. Click **Use this template** (top right of the repo)
+2. Choose a name for your new repository
+3. Clone the new repo locally:
+    ```bash
+    git clone <your-new-repo-url>
+    cd <your-new-repo>
+    ```
