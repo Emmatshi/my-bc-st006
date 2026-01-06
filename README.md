@@ -59,3 +59,17 @@ To create a new app from it:
     git clone <your-new-repo-url>
     cd <your-new-repo>
     ```
+
+## 🧪 Apps Built With This Template
+
+The following applications were built using this template, validating its
+architecture and reusability in real projects.
+
+-   🧠 **Prompt Refiner**  
+    A Streamlit app that rewrites rough prompts into clear, structured, and
+    effective instructions for large language models.  
+    🔗 Repository: https://github.com/Emmatshi/my-bc-st005  
+    🌐 Live demo: https://j2tfprxajbpususshai6ds.streamlit.app/
+    ```
+
+    ```
