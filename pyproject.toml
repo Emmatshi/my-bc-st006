@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "streamlit-ai-template"
+name = "my-bc-st006"
 version = "0.1.0"
-description = "Reusable Streamlit + OpenAI template"
+description = ""
 authors = ["Emmatshi <etshi8712@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "app_core", from = "src" }]

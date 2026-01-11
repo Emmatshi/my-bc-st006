@@ -1,16 +1,15 @@
-import streamlit as st
-from app_core.generator import generate_response
+from app_core.orchestrator import run_workflow
 
-st.set_page_config(page_title="Streamlit AI Template", layout="wide")
+if st.button("Run AI Workflow"):
+    result = run_workflow(user_input)
 
-if "OPENAI_API_KEY" not in st.secrets:
-    st.error(
-        "Missing OpenAI API key.\n\n"
-        "- Local: add it to `.streamlit/secrets.toml`\n"
-        "- Cloud: add it in App Settings → Secrets"
-    )
-    st.stop()
+    st.subheader("Refined Prompt")
+    st.code(result["refined_prompt"])
 
+    st.subheader("Generated Blog")
+    st.write(result["blog_post"])
 
-st.title("🚀 Streamlit AI Template")
-st.caption("Reusable starter for Streamlit + OpenAI apps")
+    st.subheader("Summary")
+    st.info(result["summary"])
+
+    
