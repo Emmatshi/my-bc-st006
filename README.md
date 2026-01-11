@@ -1,75 +1,79 @@
-# Streamlit AI Template
+# 🧠 AI Writing Assistant (Orchestrated)
 
-[![CI](https://github.com/Emmatshi/streamlit-ai-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Emmatshi/streamlit-ai-template/actions/workflows/ci.yml)
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.52-red)
+An orchestrated Streamlit AI application that coordinates multiple
+specialized LLM-powered tools into a single, multi-step workflow.
 
-A reusable template for building Streamlit apps powered by OpenAI.
+This app demonstrates how prompt refinement, content generation, and
+summarization can be combined through an explicit orchestration layer.
 
-## Features
+---
 
--   Streamlit + Poetry
--   Clean `src/` layout
--   OpenAI safety guard
--   Ready for Streamlit Cloud
+## ✨ What This App Does
 
-## Usage
+Instead of calling a single AI function, this application runs a
+**multi-step workflow**:
 
-1. Click **Use this template** on GitHub
-2. Clone your new repo
-3. Add `OPENAI_API_KEY`:
-    - Local: `.streamlit/secrets.toml`
-    - Cloud: App Settings → Secrets
-4. Run:
+1. Refines a rough user goal into a clear AI-ready prompt
+2. Generates a structured blog post from the refined prompt
+3. Produces a concise summary of the generated content
 
-````bash
-poetry install
-poetry run python -m streamlit run main.py
+Each step is handled by an independent tool and coordinated by an
+orchestrator.
 
-##  Local smoke test (one last time)
-```bash
-rm -rf .venv
-poetry env use $(pyenv which python)
-poetry install
-poetry run python -m streamlit run main.py
-````
+---
 
-## 🧱 Architecture
+## 🧩 Why Orchestration Matters
 
-This template follows a clean, layered architecture that separates UI, business logic, and infrastructure.
+Most AI demos perform a single LLM call.
 
-```mermaid
-flowchart TD
-    A[main.py<br/>Streamlit UI] --> B[generator.py<br/>Business Logic]
-    B --> C[prompts.py<br/>Prompt Templates]
-    B --> D[llm.py<br/>LLM Client]
-    D --> E[OpenAI API]
+This app demonstrates **orchestration**, where application code
+controls:
+
+-   Which AI tools run
+-   The order they run in
+-   How outputs from one step feed into the next
+
+This mirrors how real-world AI systems are designed in production.
+
+---
+
+## 🏗 Architecture
+
+The application is intentionally layered:
+
+-   **`main.py`**  
+    Streamlit UI (input, triggering workflow, displaying results)
+
+-   **`orchestrator.py`**  
+    Central workflow coordinator that chains multiple AI tools
+
+-   **`tools/`**  
+    Independent, reusable AI capabilities:
+
+    -   `refine.py` – prompt refinement
+    -   `generate.py` – content generation
+    -   `summarize.py` – text summarization
+
+-   **`llm.py`**  
+    Centralized LLM client configuration
+
+-   **`prompts.py`**  
+    Prompt templates shared across tools
+
+Secrets (API keys) are managed via Streamlit’s `secrets.toml` system.
+
+---
+
+## 🧠 Orchestration Flow (Conceptual)
+
+```text
+User Goal
+   ↓
+Prompt Refiner
+   ↓
+Blog Generator
+   ↓
+Summarizer
+   ↓
+Final Output
 ```
-
-## 🚀 Use This Template
-
-This repository is a **GitHub template**.
-
-To create a new app from it:
-
-1. Click **Use this template** (top right of the repo)
-2. Choose a name for your new repository
-3. Clone the new repo locally:
-    ```bash
-    git clone <your-new-repo-url>
-    cd <your-new-repo>
-    ```
-
-## 🧪 Apps Built With This Template
-
-The following applications were built using this template, validating its
-architecture and reusability in real projects.
-
--   🧠 **Prompt Refiner**  
-    A Streamlit app that rewrites rough prompts into clear, structured, and
-    effective instructions for large language models.  
-    🔗 Repository: https://github.com/Emmatshi/my-bc-st005  
-    🌐 Live demo: https://j2tfprxajbpususshai6ds.streamlit.app/
-    ```
-
-    ```
