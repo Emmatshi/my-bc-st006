@@ -1,5 +1,7 @@
 # 🧠 AI Writing Assistant (Orchestrated)
 
+[![CI](https://github.com/Emmatshi/my-bc-st006/actions/workflows/ci.yml/badge.svg)](https://github.com/Emmatshi/my-bc-st006/actions/workflows/ci.yml)
+
 An orchestrated Streamlit AI application that coordinates multiple
 specialized LLM-powered tools into a single, multi-step workflow.
 
